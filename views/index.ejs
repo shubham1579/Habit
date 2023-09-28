@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Habit Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: math;
+        }
+
+        .main-container{
+            margin-top: 5rem !important;
+            width: 600px;
+            height: 400px;
+            margin: auto;
+            padding: 40px !important;
+            position: relative;
+            border: 1px solid rgb(224, 90, 204);
+        }
+
+        ul{
+            padding-left: 1rem !important;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        p{
+            width: 70px;
+            font-size: 18px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 0.1rem !important;
+        }
+
+        a{
+            text-decoration: none;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container shadow-lg p-3 mb-5 bg-white rounded">
+        <h1>Habits</h1>
+        <ul>
+            <% habits.forEach(habit=> { %>
+                <li>
+                    <p><%= habit.name %></p>
+                    &nbsp;
+                    <a href="/habits/<%= habit._id %>">View Details</a>
+                </li>
+            <% }); %>
+        </ul>
+        <a href="/add" class="btn btn-outline-secondary">Add Habit</a>
+    </div>
+</body>
+
+</html>
